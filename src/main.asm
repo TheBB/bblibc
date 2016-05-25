@@ -11,6 +11,8 @@ __print:
   syscall
   ret
 _start:
+  pop rdi                       ; argc
+  pop rsi                       ; argv[0]
   call main
   mov rdi, rax
   mov rax, 60
