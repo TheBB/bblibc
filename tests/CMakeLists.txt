@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.5)
+enable_language(C)
+
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib")
+configure_file(runtest.sh runtest.sh COPYONLY)
+
+file(GLOB tests RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*)
+foreach(test ${tests})
+  if(IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${test}")
+    set(binary "${test}-test")
+    add_executable(${binary} EXCLUDE_FROM_ALL "${test}/main.c")
+    target_link_libraries(${binary} bblibc)
+    add_dependencies(check ${binary})
+    add_test(${test} runtest.sh ${binary} ${CMAKE_CURRENT_SOURCE_DIR}/${test})
+  endif()
+endforeach()
