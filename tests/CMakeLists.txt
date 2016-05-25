@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 2.8)
 enable_language(C)
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib")
