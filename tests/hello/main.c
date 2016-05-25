@@ -1,6 +1,6 @@
-void hello();
+void __print(const char *s, unsigned int length);
 
 int main() {
-    hello();
+    __print("Hello, World!\n", 14);
     return 0;
 }

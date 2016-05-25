@@ -1,16 +1,13 @@
 [extern main]
 
-section .data
-  msg db "Hello, World!", 0x0a
-
 section .text
-  global _start
-  global hello
-hello:
+global __print
+global _start
+__print:
   mov rax, 1
+  mov rdx, rsi
+  mov rsi, rdi
   mov rdi, 1
-  mov rsi, msg
-  mov rdx, 14
   syscall
   ret
 _start:
