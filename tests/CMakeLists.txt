@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 enable_language(C)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdlib")
 configure_file(runtest.sh runtest.sh COPYONLY)
 
 file(GLOB tests RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*)
