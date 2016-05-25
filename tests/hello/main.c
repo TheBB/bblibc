@@ -1,4 +1,4 @@
-void __print(const char *s, unsigned int length);
+#include "bbstdlib.h"
 
 int main() {
     __print("Hello, World!\n", 14);
