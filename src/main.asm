@@ -1,13 +1,10 @@
 [extern main]
 
 section .text
-global __print
+global __sys_write
 global _start
-__print:
+__sys_write:
   mov rax, 1
-  mov rdx, rsi
-  mov rsi, rdi
-  mov rdi, 1
   syscall
   ret
 _start:
