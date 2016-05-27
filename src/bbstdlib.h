@@ -8,3 +8,4 @@ size_t __sys_brk(void *addr);
 
 // Functions implemented in C
 void print(const char *s);
+void printptr(void *ptr);
