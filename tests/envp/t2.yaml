@@ -1,0 +1,5 @@
+cmd: ['env', '-i', 'A=', 'C=', '{bin}']
+ret: 0
+stdout: |
+  A=
+  C=

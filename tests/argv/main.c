@@ -6,4 +6,6 @@ int main(int argc, char **argv)
         print(argv[i]);
         print("\n");
     }
+
+    return 0;
 }
