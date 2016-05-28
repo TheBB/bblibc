@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 enable_language(C)
 
-configure_file(runtest.sh runtest.sh COPYONLY)
+configure_file(runtest.py runtest.py COPYONLY)
 
 file(GLOB tests RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_SOURCE_DIR}/*)
 foreach(test ${tests})
@@ -10,6 +10,6 @@ foreach(test ${tests})
     add_executable(${binary} EXCLUDE_FROM_ALL "${test}/main.c")
     target_link_libraries(${binary} bblibc)
     add_dependencies(check ${binary})
-    add_test(${test} runtest.sh ${binary} ${CMAKE_CURRENT_SOURCE_DIR}/${test})
+    add_test(${test} runtest.py ${binary} ${CMAKE_CURRENT_SOURCE_DIR}/${test})
   endif()
 endforeach()

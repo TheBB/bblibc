@@ -1,0 +1,3 @@
+cmd: ['{bin}']
+ret: 0
+stdout: Hello, World!
