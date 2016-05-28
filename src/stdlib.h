@@ -1,6 +1,4 @@
-// Typedefs
-typedef long unsigned int size_t;
-typedef long int ssize_t;
+#include "stddef.h"
 
 // Functions implemented in asm
 void __sys_write(int fd, const void *s, size_t length);
