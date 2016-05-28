@@ -17,11 +17,10 @@ _start:
   mov rsi, rsp                  ; argv
 
   ;; Calculate envp in rdx
-  mov rdx, rsp
-  mov r8, rdi
-  add r8, 1
-  imul r8, 8
-  add rdx, r8
+  mov rdx, rdi
+  add rdx, 1
+  imul rdx, 8
+  add rdx, rsp
 
   call main
   mov rdi, rax
