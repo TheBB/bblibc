@@ -10,6 +10,8 @@ _, executable, path = sys.argv
 executable = './{}'.format(executable)
 
 for test in listdir(path):
+    print('>>> {}'.format(test))
+
     if not test.endswith('.yaml'):
         continue
     with open(join(path, test)) as f:
@@ -20,6 +22,6 @@ for test in listdir(path):
     if 'ret' in data:
         assert res.returncode == data['ret']
     if 'stdout' in data:
-        if not data['stdout'].endswith('\n'):
+        if data['stdout'] and not data['stdout'].endswith('\n'):
             data['stdout'] += '\n'
         assert res.stdout.decode() == data['stdout']

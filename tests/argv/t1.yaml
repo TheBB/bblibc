@@ -1,0 +1,5 @@
+cmd: ['{bin}', 'arg1', 'arg2']
+ret: 0
+stdout: |
+  arg1
+  arg2
