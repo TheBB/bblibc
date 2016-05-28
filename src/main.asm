@@ -14,7 +14,15 @@ __sys_brk:
   ret
 _start:
   pop rdi                       ; argc
-  pop rsi                       ; argv[0]
+  mov rsi, rsp                  ; argv
+
+  ;; Calculate envp in rdx
+  mov rdx, rsp
+  mov r8, rdi
+  add r8, 1
+  imul r8, 8
+  add rdx, r8
+
   call main
   mov rdi, rax
   mov rax, 60

@@ -1,6 +1,6 @@
 #include "bbstdlib.h"
 
-int main(int argc, char *arg) {
+int main() {
     print("Hello, World!\n");
     return 0;
 }
