@@ -1,0 +1,18 @@
+language: generic
+sudo: false
+
+branches:
+  only:
+    - master
+
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake
+      - cmake-data
+      - nasm
+
+script:
+  - ./travis.sh
